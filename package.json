@@ -1,0 +1,19 @@
+{
+  "name": "com.alteracia.altmath",
+  "version": "0.0.0",
+  "displayName": "altMath",
+  "description": "Some Math functions for Unity",
+  "unity": "2019.4",
+  "keywords": [
+    "math",
+    "Vector3"
+  ],
+  "author": {
+    "name": "Pavel Kazantsev",
+    "email": "kazantsev@alteracia.ru",
+    "url": ""
+  },
+  "dependencies": {
+  },
+  "type": "library"
+}
