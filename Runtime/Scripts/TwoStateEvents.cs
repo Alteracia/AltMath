@@ -22,12 +22,12 @@ public abstract class TwoStateEvents<T> : ScriptableObject, ITwoStateEvent<T>
         OnSecondaryEvent = null;
     }
 
-    public void InvokePrimary(T eventObject)
+    public virtual void InvokePrimary(T eventObject)
     {
         OnPrimaryEvent?.Invoke(eventObject);
     }
 
-    public void InvokeSecondary(T eventObject)
+    public virtual void InvokeSecondary(T eventObject)
     {
         OnSecondaryEvent?.Invoke(eventObject);
     }
