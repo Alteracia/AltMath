@@ -1,19 +1,26 @@
 {
-  "name": "com.alteracia.altmath",
-  "version": "0.0.0",
-  "displayName": "altMath",
-  "description": "Some Math functions for Unity",
-  "unity": "2019.4",
+  "name": "com.alteracia.altlogic",
+  "version": "0.0.1",
+  "displayName": "altLogic",
+  "description": "Some Logic for Unity",
+  "unity": "2017.1",
   "keywords": [
     "math",
-    "Vector3"
+    "Vector3",
+    "events"
   ],
   "author": {
     "name": "Pavel Kazantsev",
     "email": "kazantsev@alteracia.ru",
-    "url": ""
+    "url": "alteracia.ru"
   },
-  "dependencies": {
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Alteracia/AltMath.git"
   },
-  "type": "library"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Alteracia/AltMath/issues"
+  },
+  "homepage": "https://github.com/Alteracia/AltMath#readme"
 }

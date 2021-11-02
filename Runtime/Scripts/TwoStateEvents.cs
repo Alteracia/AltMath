@@ -1,11 +1,11 @@
 using System;
 using UnityEngine;
 
-public interface ITwoStateEvent<in T>
+public interface ITwoStateEvent<T>
 {
+    Action<T> OnPrimaryEvent  { get; set; }
+    Action<T> OnSecondaryEvent { get; set; }
     void Clear();
-    void InvokePrimary(T eventObject);
-    void InvokeSecondary(T eventObject);
 }
 
 /// <summary>
@@ -13,22 +13,23 @@ public interface ITwoStateEvent<in T>
 /// </summary>
 public abstract class TwoStateEvents<T> : ScriptableObject, ITwoStateEvent<T>
 {
-    [NonSerialized] public Action<T> OnPrimaryEvent;
-    [NonSerialized] public Action<T> OnSecondaryEvent;
-    
+    [NonSerialized] private Action<T> _onPrimaryEvent;
+    public Action<T> OnPrimaryEvent
+    {
+        get => _onPrimaryEvent;
+        set => _onPrimaryEvent = value;
+    }
+
+    [NonSerialized] private Action<T> _onSecondaryEvent;
+    public Action<T> OnSecondaryEvent
+    {
+        get => _onSecondaryEvent;
+        set => _onSecondaryEvent = value;
+    }
+
     public void Clear()
     {
-        OnPrimaryEvent = null;
-        OnSecondaryEvent = null;
-    }
-
-    public virtual void InvokePrimary(T eventObject)
-    {
-        OnPrimaryEvent?.Invoke(eventObject);
-    }
-
-    public virtual void InvokeSecondary(T eventObject)
-    {
-        OnSecondaryEvent?.Invoke(eventObject);
+        _onPrimaryEvent = null;
+        _onSecondaryEvent = null;
     }
 }
