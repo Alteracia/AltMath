@@ -1,7 +1,7 @@
 {
   "name": "com.alteracia.altmath",
-  "version": "0.0.1",
-  "displayName": "altLogic",
+  "version": "0.0.3",
+  "displayName": "Alteracia.Logic",
   "description": "Some Logic for Unity",
   "unity": "2017.1",
   "keywords": [
